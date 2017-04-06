@@ -1,8 +1,8 @@
 
 # Builds a docker gui image
-FROM hurricane/dockergui:x11rdp1.3
+FROM an0t8/dockergui
 
-MAINTAINER aptalca
+MAINTAINER an0t8
 
 #########################################
 ##        ENVIRONMENTAL CONFIG         ##
@@ -34,7 +34,7 @@ echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restrict
 # Install packages needed for app
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
 apt-get update && \
-apt-get install -y ImageMagick && \
+apt-get install -y python ImageMagick && \
 #########################################
 ##          GUI APP INSTALL            ##
 #########################################
@@ -54,4 +54,4 @@ COPY startapp.sh /startapp.sh
 
 # Place whater volumes and ports you want exposed here:
 VOLUME ["/config"]
-EXPOSE 3389 8080 8081
+EXPOSE 3389 8080

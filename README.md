@@ -2,6 +2,8 @@
 
 Run the Calibre X app accessible in a web browser
 
+This container is forked from aptalca/docker-rdp-calibre (https://github.com/aptalca/docker-rdp-calibre), primarily to use a custom dockergui as a base that doesn't include guacamole.
+
 ## Install On unRaid:
 
 On unRaid, install from the Community Repositories and enter the app folder location and the port for the webUI.
