@@ -54,4 +54,5 @@ COPY startapp.sh /startapp.sh
 
 # Place whater volumes and ports you want exposed here:
 VOLUME ["/config"]
+VOLUME ["/library"]
 EXPOSE 3389 8080

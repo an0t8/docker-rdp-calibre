@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /config/config
-ln -s /config/config /nobody/.config/calibre
+mkdir -p /config
+ln -s /config /nobody/.config/calibre
 chown -R nobody:users /config
 chmod -R g+rw /config
 [[ -f /tmp/.X1-lock ]] && rm /tmp/.X1-lock && echo "X1-lock found, deleting"
@@ -17,4 +17,7 @@ if [ -z "$LIBRARYINTERNALPATH" ]; then
   LIBRARYINTERNALPATH=/config
 fi
 
-/sbin/setuser nobody calibre-server --with-library=$LIBRARYINTERNALPATH --port 8081 --url-prefix=$URLPREFIX &
+chown -R nobody:users $LIBRARYINTERNALPATH
+chmod -R g+rw $LIBRARYINTERNALPATH
+
+/sbin/setuser nobody calibre-server --with-library=$LIBRARYINTERNALPATH --port 8080 --url-prefix=$URLPREFIX &

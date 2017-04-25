@@ -1,1 +1,1 @@
-calibre
+calibre --with-library=$LIBRARYINTERNALPATH
