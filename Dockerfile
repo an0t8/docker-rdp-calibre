@@ -1,6 +1,6 @@
 
 # Builds a docker gui image
-FROM an0t8/dockergui
+FROM an0t8/dockergui:Trusty
 
 MAINTAINER an0t8
 
