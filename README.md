@@ -33,7 +33,7 @@ You can access the Calibre webserver by pointing your web browser to http://SERV
 (Replace SERVERIP, XXXX and YYYY with your values)
 
 ### Advanced Features (only for docker pros)
-#### (Deprecated)Custom library location:
+#### Custom library location:
 If you would like to change the library location you need to do a couple of things:
 - First add a new mount point for the library location in the docker run command. Example: -v /path/to/library:/library:rw
 - Then add an environment variable (LIBRARYINTERNALPATH) to specify the internal library location for the webserver. Example: -e LIBRARYINTERNALPATH="/library"
@@ -44,6 +44,7 @@ If you would like to change the library location you need to do a couple of thin
 - To access the webserver, go to http://SERVERIP:YYYY/calibre
 
 ### Changelog:
-+ **2017-06-24:** LIBRARYINTERNALPATH and URLPREFIX variables are deprecated. They were required for the calibre webserver. The new webserver should be enabled from the calibre gui under Preferences/Sharing over the net. **Port has to be set to 8081**
++ **2018-03-01:** LIBRARYINTERNALPATH is still used to select your path as the default library.  URLPREFIX variable is deprecated. It was required for the calibre webserver. The new webserver should be enabled from the calibre gui under Preferences/Sharing over the net. **Port has to be set to 8080**
+~~+ **2017-06-24:** LIBRARYINTERNALPATH and URLPREFIX variables are deprecated. They were required for the calibre webserver. The new webserver should be enabled from the calibre gui under Preferences/Sharing over the net. **Port has to be set to 8081**~~
 + **2016-09-16:** Remove X1-lock if exists, which prevents start up following an unclean shutdown
 + **2016-09-15:** Updated base to x11rdp1.3, which now supports clipboard through the left hand side menu (ctrl+alt+shift) - calibre updated to 2.67
