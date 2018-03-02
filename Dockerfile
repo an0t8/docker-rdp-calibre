@@ -29,16 +29,18 @@ RUN \
 ##    REPOSITORIES AND DEPENDENCIES    ##
 #########################################
 echo 'deb http://archive.ubuntu.com/ubuntu trusty main universe restricted' > /etc/apt/sources.list && \
-echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restricted' >> /etc/apt/sources.list && \
+echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restricted' >> /etc/apt/sources.list 
 
+RUN \
 # Install packages needed for app
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
 apt-get update && \
-apt-get install -y python ImageMagick && \
+apt-get install -y python ImageMagick 
+
+RUN \
 #########################################
 ##          GUI APP INSTALL            ##
 #########################################
-
 # Install steps for X app
 wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()" && \
 mkdir -p /etc/my_init.d
