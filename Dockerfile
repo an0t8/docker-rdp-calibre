@@ -35,7 +35,7 @@ RUN \
 # Install packages needed for app
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
 apt-get update && \
-apt-get install -y python ImageMagick 
+apt-get install -y python python-xdg ImageMagick 
 
 RUN \
 #########################################
